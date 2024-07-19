@@ -56,13 +56,15 @@ class Add_student_List {
 
     
 
+    
+
     }
 
     verif_invitation(){ 
 
         cy.get(student_list_selectors.Confirm_Invitation_Sent,{timout:2000}).should('be.visible').click();
         
-        cy.wait(2000);
+        cy.wait(3000);
         let invi_msg = cy.get('.H4-Subtitle').invoke('text').then ((text)=> { 
             const trim_Text= text.trim();
             let invi_nbr = parseInt(trim_Text[0]);
