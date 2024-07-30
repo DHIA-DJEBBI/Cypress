@@ -15,6 +15,11 @@ const student_selectors =  {
 
     email_existing_verif:".mb-5 > .btn-Primary",
     status_student:".text-end",
+
+
+
+
+    
     
 
 }
