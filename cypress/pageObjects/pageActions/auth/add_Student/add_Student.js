@@ -79,8 +79,6 @@ class Add_Student {
 }
 }
 
-
-
 function getRandomChar(charSet) {
     const randomIndex = Math.floor(Math.random() * charSet.length);
     return charSet[randomIndex];

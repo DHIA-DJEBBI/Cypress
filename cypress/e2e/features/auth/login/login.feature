@@ -5,7 +5,7 @@ Feature: director Login with valid and invalid credentials
 
 
   Scenario: successful director Login
-    When I enter the email 'qa+uptotestG2@koors.io' and the password '123456789SF'
+    When I enter the email 'qa+up2testg2@koors.io' and the password 'uptotest2024'
     Then I am on Activity Page
 
 

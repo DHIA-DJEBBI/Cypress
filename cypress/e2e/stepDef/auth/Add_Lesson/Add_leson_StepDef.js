@@ -17,9 +17,3 @@ Then (/^I scheck if the Lesson is added or not/,()=> Add_lesson_page_Actions.cou
 
 
 
-
-
-
-
-
-

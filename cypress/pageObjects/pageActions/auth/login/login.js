@@ -2,7 +2,7 @@ import selectorsLogin from "../../../pageElements/auth/login/login";
 class Login_Action {
 
     visitLogin(){
-        cy.visit("https://app.uat.koors.io/uptotestg2/auth/login");
+        cy.visit("https://app.uat.koors.io/uptotestg22/auth/login");
     }
     set_Acsess_data(email,password){
 

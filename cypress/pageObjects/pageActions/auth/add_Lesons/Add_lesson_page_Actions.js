@@ -4,41 +4,34 @@ import "cypress-file-upload";
 class Add_lesson_page_Actions {
   Add_lesson() {
     cy.viewport(1920, 1080);
-    cy.get(student_list_selectors.Professor_tobe_selectors, { timeout: 4000 })
-      .should("be.visible")
-      .click(); // Professor_is_selected
+    cy.get(student_list_selectors.Professor_tobe_selectors, { timeout: 4000 }).should("be.visible").click(); // Professor_is_selected
     cy.get(student_list_selectors.Professor_is_selected, { timeout: 4000 })
       .should("be.visible")
       .click(); // Lesson_tobe_Added
     cy.wait(5000);
-    cy.get(student_list_selectors.Lesson_tobe_Added, { timeout: 4000 })
-      .should("be.visible")
-      .click(); // New_Lesson_select
-    cy.wait(3000);
-    cy.get(student_list_selectors.New_Lesson_select, { timeout: 7000 })
-      .should("be.visible")
-      .click(); // Cours_Selector
-    cy.get(student_list_selectors.Cours_Selector, { timeout: 4000 })
-      .should("be.visible")
-      .click(); // Title_is_added
-    cy.get(student_list_selectors.Title_is_added, { timeout: 4000 }).type(
-      "First_Lesson ( Day 1) "
-    );
+    cy.get(student_list_selectors.Lesson_tobe_Added, { timeout: 4000 }).should("be.visible").click(); // New_Lesson_select
+
     cy.wait(3000);
 
-    cy.get(student_list_selectors.resume_selector, { timeout: 4000 })
-      .should("be.visible")
-      .type("First day of this course");
+    cy.get(student_list_selectors.New_Lesson_select, { timeout: 7000 }).should("be.visible").click(); // Cours_Selector
+
+    cy.get(student_list_selectors.Cours_Selector, { timeout: 4000 }).should("be.visible").click(); // Title_is_added
+    cy.get(student_list_selectors.Title_is_added, { timeout: 4000 }).type("First_Lesson ( Day 1) ");
+   
+    cy.wait(3000);
+
+    cy.get(student_list_selectors.resume_selector, { timeout: 4000 }).should("be.visible").type("First day of this course");
+
     //cy.get('#my-courses-container').click();
     // The next line is added to avoid the Prbl of deleting the previous sent text ....
+    cy.wait(5000);
 
-    cy.get(
-      ".skills-form-professor > :nth-child(2) > .MuiFormControl-root > .jss16 > .MuiInputBase-root > .MuiInputBase-input"
-    ).type("Test");
+    cy.get(".skills-form-professor > :nth-child(2) > .MuiFormControl-root > .jss16 > .MuiInputBase-root", { timeout: 4000 }).type("Test");
 
     // Test
 
     //this.ImportPhoto("Capture_test_lesson.PNG");
+
     cy.wait(5000);
 
     // Test
@@ -57,11 +50,12 @@ class Add_lesson_page_Actions {
 
     //  Content creation for the Lesson ...
 
-    cy.get(":nth-child(2) > .nav-btn-black", { timeout: 4000 })
-      .should("be.visible")
-      .click();
+    cy.get(":nth-child(2) > .nav-btn-black", { timeout: 4000 }).should("be.visible").click();
+
     cy.get(".me-3", { timeout: 4000 }).should("be.visible").click();
-    cy.get("#title", { timeout: 4000 }).clear().type("chaptre 1 ( day 1 ) ");
+
+    cy.get("#title", { timeout: 4000 }).clear().type("chaptre 1 ( day 2 ) ");
+
     cy.get(".ql-editor > p", { timeout: 4000 }).type("this chaptre is about basics of testing ");
 
     cy.wait(4000);
@@ -140,15 +134,11 @@ class Add_lesson_page_Actions {
       
           // Iterate through the list and compare
           expectedValues.forEach((expectedValue) => {
-            // Assert that the trimmed text matches the expected value
+          // Assert that the trimmed text matches the expected value
             expect(trim_Text).to.equal(expectedValue);
           });
         });
       
-
-    
-    
-    
 
 
 
@@ -172,8 +162,8 @@ class Add_lesson_page_Actions {
     }*/
 }
 
-export default new Add_lesson_page_Actions();
 
+export default new Add_lesson_page_Actions();
 
 
 
